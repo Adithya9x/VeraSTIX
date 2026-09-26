@@ -1,0 +1,90 @@
+{
+  "claims": [
+    {
+      "technique_id": "T1055",
+      "technique_name": "Process Injection (section-mapping/APC variant)",
+      "evidence_ids": [
+        "EVT-0099",
+        "EVT-0107",
+        "EVT-0292",
+        "EVT-0328",
+        "EVT-0609",
+        "EVT-1071",
+        "EVT-1663",
+        "EVT-2488",
+        "EVT-2774",
+        "EVT-3102",
+        "EVT-3111",
+        "EVT-3151",
+        "EVT-3170",
+        "EVT-3181",
+        "EVT-3200",
+        "EVT-3554",
+        "EVT-4042",
+        "EVT-0100",
+        "EVT-0108",
+        "EVT-0293",
+        "EVT-0329",
+        "EVT-0610",
+        "EVT-0683",
+        "EVT-1072",
+        "EVT-1664",
+        "EVT-2489",
+        "EVT-2775",
+        "EVT-3103",
+        "EVT-3112",
+        "EVT-3152",
+        "EVT-3171",
+        "EVT-3182",
+        "EVT-3201",
+        "EVT-3555",
+        "EVT-4043",
+        "EVT-0361",
+        "EVT-0362",
+        "EVT-0363",
+        "EVT-0433",
+        "EVT-0434",
+        "EVT-0435",
+        "EVT-2785",
+        "EVT-2815",
+        "EVT-2862",
+        "EVT-2863",
+        "EVT-2864",
+        "EVT-2964",
+        "EVT-2965",
+        "EVT-3076",
+        "EVT-3989",
+        "EVT-3990",
+        "EVT-3999",
+        "EVT-4055"
+      ],
+      "justification": "Section creation, mapping, and thread/APC triggering observed together in 007c13a26d76a1281519.exe (PID 1540) \u2014 process hollowing / APC injection pattern."
+    }
+  ],
+  "comparison_vs_cape": {
+    "cape_claimed": [
+      "T1033",
+      "T1055",
+      "T1059",
+      "T1070",
+      "T1070.006",
+      "T1071",
+      "T1082",
+      "T1112",
+      "T1129",
+      "T1543",
+      "T1547",
+      "T1562",
+      "T1568",
+      "T1574"
+    ],
+    "we_claimed": [
+      "T1055"
+    ],
+    "matched_exact": [
+      "T1055"
+    ],
+    "matched_via_parent_technique": [],
+    "we_found_cape_missed": []
+  }
+}

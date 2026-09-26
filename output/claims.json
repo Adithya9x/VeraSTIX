@@ -1,0 +1,88 @@
+{
+  "claims": [
+    {
+      "technique_id": "T1562.001",
+      "technique_name": "Impair Defenses: Disable or Modify Tools",
+      "evidence_ids": [
+        "EVT-0479",
+        "EVT-0480",
+        "EVT-0481",
+        "EVT-0482",
+        "EVT-0483",
+        "EVT-0484",
+        "EVT-0488",
+        "EVT-0489",
+        "EVT-0490",
+        "EVT-0491",
+        "EVT-0492",
+        "EVT-0493",
+        "EVT-0494",
+        "EVT-0495"
+      ],
+      "justification": "Service-manipulation APIs targeted known security services: ['securityhealthservice', 'sense', 'wdboot', 'wdfilter', 'wdnisdrv', 'wdnissvc', 'windefend', 'wscsvc']"
+    },
+    {
+      "technique_id": "T1489",
+      "technique_name": "Service Stop",
+      "evidence_ids": [
+        "EVT-0479",
+        "EVT-0480",
+        "EVT-0481",
+        "EVT-0482",
+        "EVT-0483",
+        "EVT-0484",
+        "EVT-0488",
+        "EVT-0489",
+        "EVT-0490",
+        "EVT-0491",
+        "EVT-0492",
+        "EVT-0493",
+        "EVT-0494",
+        "EVT-0495"
+      ],
+      "justification": "Security services were stopped/deleted via ControlService/DeleteService: ['securityhealthservice', 'sense', 'wdboot', 'wdfilter', 'wdnisdrv', 'wdnissvc', 'windefend', 'wscsvc']"
+    },
+    {
+      "technique_id": "T1490",
+      "technique_name": "Inhibit System Recovery",
+      "evidence_ids": [
+        "EVT-0516",
+        "EVT-0517",
+        "EVT-0518",
+        "EVT-0519",
+        "EVT-0520",
+        "EVT-0521"
+      ],
+      "justification": "Volume Shadow Copy Service was manipulated (stopped/deleted), removing recovery points."
+    }
+  ],
+  "comparison_vs_cape": {
+    "cape_claimed": [
+      "T1027",
+      "T1027.002",
+      "T1033",
+      "T1071",
+      "T1082",
+      "T1486",
+      "T1489",
+      "T1543",
+      "T1543.003",
+      "T1562",
+      "T1562.001",
+      "T1564"
+    ],
+    "we_claimed": [
+      "T1489",
+      "T1490",
+      "T1562.001"
+    ],
+    "matched_exact": [
+      "T1489",
+      "T1562.001"
+    ],
+    "matched_via_parent_technique": [],
+    "we_found_cape_missed": [
+      "T1490"
+    ]
+  }
+}
