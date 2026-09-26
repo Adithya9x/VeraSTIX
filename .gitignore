@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+src/redaction_manifest_LOCAL_ONLY.json
