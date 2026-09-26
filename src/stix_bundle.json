@@ -1,0 +1,289 @@
+{
+    "type": "bundle",
+    "id": "bundle--17273778-2057-4d14-b5dc-6602b9359a09",
+    "objects": [
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--56164106-ee4f-44a4-ac9a-4902af53c8f9",
+            "created": "2026-09-26T09:39:26.310058Z",
+            "modified": "2026-09-26T09:39:26.310058Z",
+            "name": "real_report_small",
+            "malware_types": [
+                "ransomware"
+            ],
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--24b1fd33-cddf-4d5f-89f5-162921c6268c",
+            "created": "2026-09-26T09:39:26.311145Z",
+            "modified": "2026-09-26T09:39:26.311145Z",
+            "name": "Impair Defenses: Disable or Modify Tools",
+            "external_references": [
+                {
+                    "source_name": "mitre-attack",
+                    "url": "https://attack.mitre.org/techniques/T1562/001/",
+                    "external_id": "T1562.001"
+                }
+            ]
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--9828a113-7810-450f-be1d-b0895df04863",
+            "created": "2026-09-26T09:39:26.313062Z",
+            "modified": "2026-09-26T09:39:26.313062Z",
+            "name": "Service Stop",
+            "external_references": [
+                {
+                    "source_name": "mitre-attack",
+                    "url": "https://attack.mitre.org/techniques/T1489/",
+                    "external_id": "T1489"
+                }
+            ]
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--bd953acc-3a11-4195-bf45-cd52a5d9aa05",
+            "created": "2026-09-26T09:39:26.313716Z",
+            "modified": "2026-09-26T09:39:26.313716Z",
+            "name": "Inhibit System Recovery",
+            "external_references": [
+                {
+                    "source_name": "mitre-attack",
+                    "url": "https://attack.mitre.org/techniques/T1490/",
+                    "external_id": "T1490"
+                }
+            ]
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--8263f9fb-8dde-4fa7-8c32-b158d34d7025",
+            "created": "2026-09-26T09:39:26.314232Z",
+            "modified": "2026-09-26T09:39:26.314232Z",
+            "name": "Process Injection (section-mapping/APC variant)",
+            "external_references": [
+                {
+                    "source_name": "mitre-attack",
+                    "url": "https://attack.mitre.org/techniques/T1055/",
+                    "external_id": "T1055"
+                }
+            ]
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--1c48e4e3-d683-41e9-9ff6-3474460d84ca",
+            "created": "2026-09-26T09:39:26.314765Z",
+            "modified": "2026-09-26T09:39:26.314765Z",
+            "name": "Data Encrypted for Impact",
+            "external_references": [
+                {
+                    "source_name": "mitre-attack",
+                    "url": "https://attack.mitre.org/techniques/T1486/",
+                    "external_id": "T1486"
+                }
+            ]
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--ab552ed4-37dc-43b0-8ea4-98c6047b72ba",
+            "created": "2026-09-26T09:39:26.315272Z",
+            "modified": "2026-09-26T09:39:26.315272Z",
+            "name": "Modify Registry",
+            "external_references": [
+                {
+                    "source_name": "mitre-attack",
+                    "url": "https://attack.mitre.org/techniques/T1112/",
+                    "external_id": "T1112"
+                }
+            ]
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--c7059777-4909-4726-83e3-68626134bd98",
+            "created": "2026-09-26T09:39:26.311926Z",
+            "modified": "2026-09-26T09:39:26.311926Z",
+            "relationship_type": "uses",
+            "description": "Service-manipulation APIs targeted known security services: ['securityhealthservice', 'sense', 'wdboot', 'wdfilter', 'wdnisdrv', 'wdnissvc', 'windefend', 'wscsvc']",
+            "source_ref": "malware--56164106-ee4f-44a4-ac9a-4902af53c8f9",
+            "target_ref": "attack-pattern--24b1fd33-cddf-4d5f-89f5-162921c6268c",
+            "x_verastix_confidence": "high (direct API evidence chain)",
+            "x_verastix_evidence_ids": [
+                "EVT-0479",
+                "EVT-0480",
+                "EVT-0481",
+                "EVT-0482",
+                "EVT-0483",
+                "EVT-0484",
+                "EVT-0488",
+                "EVT-0489",
+                "EVT-0490",
+                "EVT-0491",
+                "EVT-0492",
+                "EVT-0493",
+                "EVT-0494",
+                "EVT-0495"
+            ]
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--6ff7869c-f3d3-416b-a1b7-d14f33a05e9c",
+            "created": "2026-09-26T09:39:26.313447Z",
+            "modified": "2026-09-26T09:39:26.313447Z",
+            "relationship_type": "uses",
+            "description": "Security services were stopped/deleted via ControlService/DeleteService: ['securityhealthservice', 'sense', 'wdboot', 'wdfilter', 'wdnisdrv', 'wdnissvc', 'windefend', 'wscsvc']",
+            "source_ref": "malware--56164106-ee4f-44a4-ac9a-4902af53c8f9",
+            "target_ref": "attack-pattern--9828a113-7810-450f-be1d-b0895df04863",
+            "x_verastix_confidence": "high (direct API evidence chain)",
+            "x_verastix_evidence_ids": [
+                "EVT-0479",
+                "EVT-0480",
+                "EVT-0481",
+                "EVT-0482",
+                "EVT-0483",
+                "EVT-0484",
+                "EVT-0488",
+                "EVT-0489",
+                "EVT-0490",
+                "EVT-0491",
+                "EVT-0492",
+                "EVT-0493",
+                "EVT-0494",
+                "EVT-0495"
+            ]
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--370a45cd-36f9-46ca-9b11-15703980085e",
+            "created": "2026-09-26T09:39:26.313993Z",
+            "modified": "2026-09-26T09:39:26.313993Z",
+            "relationship_type": "uses",
+            "description": "Volume Shadow Copy Service was manipulated (stopped/deleted), removing recovery points.",
+            "source_ref": "malware--56164106-ee4f-44a4-ac9a-4902af53c8f9",
+            "target_ref": "attack-pattern--bd953acc-3a11-4195-bf45-cd52a5d9aa05",
+            "x_verastix_confidence": "high (direct API evidence chain)",
+            "x_verastix_evidence_ids": [
+                "EVT-0516",
+                "EVT-0517",
+                "EVT-0518",
+                "EVT-0519",
+                "EVT-0520",
+                "EVT-0521"
+            ]
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--2980c496-b071-4a67-9c55-eb68138eb759",
+            "created": "2026-09-26T09:39:26.314493Z",
+            "modified": "2026-09-26T09:39:26.314493Z",
+            "relationship_type": "uses",
+            "description": "Section creation, mapping, and thread/APC triggering observed together in 0017ecc5f6c73be23b75.exe (PID 3252) \u2014 process hollowing / APC injection pattern.",
+            "source_ref": "malware--56164106-ee4f-44a4-ac9a-4902af53c8f9",
+            "target_ref": "attack-pattern--8263f9fb-8dde-4fa7-8c32-b158d34d7025",
+            "x_verastix_confidence": "high (direct API evidence chain)",
+            "x_verastix_evidence_ids": [
+                "EVT-0087",
+                "EVT-0106",
+                "EVT-0129",
+                "EVT-0150",
+                "EVT-0168",
+                "EVT-0290",
+                "EVT-0302",
+                "EVT-0400",
+                "EVT-0088",
+                "EVT-0107",
+                "EVT-0130",
+                "EVT-0151",
+                "EVT-0169",
+                "EVT-0291",
+                "EVT-0303",
+                "EVT-0336",
+                "EVT-0359",
+                "EVT-0401",
+                "EVT-0588",
+                "EVT-0456",
+                "EVT-0511",
+                "EVT-0513",
+                "EVT-0524",
+                "EVT-0563",
+                "EVT-0566",
+                "EVT-0637",
+                "EVT-0640",
+                "EVT-0659",
+                "EVT-0662",
+                "EVT-0670"
+            ]
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--1bce9446-9e61-4848-80ab-3ef64b9d62c3",
+            "created": "2026-09-26T09:39:26.315056Z",
+            "modified": "2026-09-26T09:39:26.315056Z",
+            "relationship_type": "uses",
+            "description": "Ransom-note-style file(s) dropped: ['C:\\\\YiFHcqA5w.README.txt']. NOTE: circumstantial \u2014 no direct encryption API call observed, consistent with malware using custom (non-API) encryption to evade detection.",
+            "source_ref": "malware--56164106-ee4f-44a4-ac9a-4902af53c8f9",
+            "target_ref": "attack-pattern--1c48e4e3-d683-41e9-9ff6-3474460d84ca",
+            "x_verastix_confidence": "medium \u2014 file-artifact pattern only, not a directly observed encryption call",
+            "x_verastix_evidence_ids": [
+                "EVT-0740"
+            ]
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--914f5d2d-70fd-413a-879a-917a4b9379e9",
+            "created": "2026-09-26T09:39:26.315477Z",
+            "modified": "2026-09-26T09:39:26.315477Z",
+            "relationship_type": "uses",
+            "description": "Registry key(s) written outside known autorun locations (4 write(s)).",
+            "source_ref": "malware--56164106-ee4f-44a4-ac9a-4902af53c8f9",
+            "target_ref": "attack-pattern--ab552ed4-37dc-43b0-8ea4-98c6047b72ba",
+            "x_verastix_confidence": "high (direct API evidence chain)",
+            "x_verastix_evidence_ids": [
+                "EVT-0729",
+                "EVT-0730",
+                "EVT-0731",
+                "EVT-0732"
+            ]
+        },
+        {
+            "type": "report",
+            "spec_version": "2.1",
+            "id": "report--a9e9d8b3-de4e-4026-b916-84a6d5486d33",
+            "created": "2026-09-26T09:39:26.315734Z",
+            "modified": "2026-09-26T09:39:26.315734Z",
+            "name": "VeraSTIX Analysis: real_report_small",
+            "description": "Evidence-grounded threat intelligence generated by VeraSTIX. Every relationship in this bundle cites specific evidence_ids from the source sandbox report, verifiable via the accompanying (internal-only) evidence log. Victim-identifying data (usernames, internal IPs, hostnames) has been redacted from the underlying evidence per VeraSTIX's redaction policy; see redaction_manifest_LOCAL_ONLY.json (internal use only, not distributed) for the audit trail.",
+            "published": "2026-09-26T09:39:26.3157Z",
+            "object_refs": [
+                "malware--56164106-ee4f-44a4-ac9a-4902af53c8f9",
+                "attack-pattern--24b1fd33-cddf-4d5f-89f5-162921c6268c",
+                "attack-pattern--9828a113-7810-450f-be1d-b0895df04863",
+                "attack-pattern--bd953acc-3a11-4195-bf45-cd52a5d9aa05",
+                "attack-pattern--8263f9fb-8dde-4fa7-8c32-b158d34d7025",
+                "attack-pattern--1c48e4e3-d683-41e9-9ff6-3474460d84ca",
+                "attack-pattern--ab552ed4-37dc-43b0-8ea4-98c6047b72ba",
+                "relationship--c7059777-4909-4726-83e3-68626134bd98",
+                "relationship--6ff7869c-f3d3-416b-a1b7-d14f33a05e9c",
+                "relationship--370a45cd-36f9-46ca-9b11-15703980085e",
+                "relationship--2980c496-b071-4a67-9c55-eb68138eb759",
+                "relationship--1bce9446-9e61-4848-80ab-3ef64b9d62c3",
+                "relationship--914f5d2d-70fd-413a-879a-917a4b9379e9"
+            ],
+            "labels": [
+                "threat-report"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "technique_id": "T1562.001",
+    "technique_name": "Impair Defenses: Disable or Modify Tools",
+    "evidence_ids": [
+      "EVT-0479",
+      "EVT-0480",
+      "EVT-0481",
+      "EVT-0482",
+      "EVT-0483",
+      "EVT-0484",
+      "EVT-0488",
+      "EVT-0489",
+      "EVT-0490",
+      "EVT-0491",
+      "EVT-0492",
+      "EVT-0493",
+      "EVT-0494",
+      "EVT-0495"
+    ],
+    "justification": "Service-manipulation APIs targeted known security services: ['securityhealthservice', 'sense', 'wdboot', 'wdfilter', 'wdnisdrv', 'wdnissvc', 'windefend', 'wscsvc']"
+  },
+  {
+    "technique_id": "T1489",
+    "technique_name": "Service Stop",
+    "evidence_ids": [
+      "EVT-0479",
+      "EVT-0480",
+      "EVT-0481",
+      "EVT-0482",
+      "EVT-0483",
+      "EVT-0484",
+      "EVT-0488",
+      "EVT-0489",
+      "EVT-0490",
+      "EVT-0491",
+      "EVT-0492",
+      "EVT-0493",
+      "EVT-0494",
+      "EVT-0495"
+    ],
+    "justification": "Security services were stopped/deleted via ControlService/DeleteService: ['securityhealthservice', 'sense', 'wdboot', 'wdfilter', 'wdnisdrv', 'wdnissvc', 'windefend', 'wscsvc']"
+  },
+  {
+    "technique_id": "T1490",
+    "technique_name": "Inhibit System Recovery",
+    "evidence_ids": [
+      "EVT-0516",
+      "EVT-0517",
+      "EVT-0518",
+      "EVT-0519",
+      "EVT-0520",
+      "EVT-0521"
+    ],
+    "justification": "Volume Shadow Copy Service was manipulated (stopped/deleted), removing recovery points."
+  },
+  {
+    "technique_id": "T1055",
+    "technique_name": "Process Injection (section-mapping/APC variant)",
+    "evidence_ids": [
+      "EVT-0087",
+      "EVT-0106",
+      "EVT-0129",
+      "EVT-0150",
+      "EVT-0168",
+      "EVT-0290",
+      "EVT-0302",
+      "EVT-0400",
+      "EVT-0088",
+      "EVT-0107",
+      "EVT-0130",
+      "EVT-0151",
+      "EVT-0169",
+      "EVT-0291",
+      "EVT-0303",
+      "EVT-0336",
+      "EVT-0359",
+      "EVT-0401",
+      "EVT-0588",
+      "EVT-0456",
+      "EVT-0511",
+      "EVT-0513",
+      "EVT-0524",
+      "EVT-0563",
+      "EVT-0566",
+      "EVT-0637",
+      "EVT-0640",
+      "EVT-0659",
+      "EVT-0662",
+      "EVT-0670"
+    ],
+    "justification": "Section creation, mapping, and thread/APC triggering observed together in 0017ecc5f6c73be23b75.exe (PID 3252) \u2014 process hollowing / APC injection pattern."
+  },
+  {
+    "technique_id": "T1486",
+    "technique_name": "Data Encrypted for Impact",
+    "evidence_ids": [
+      "EVT-0740"
+    ],
+    "justification": "Ransom-note-style file(s) dropped: ['C:\\\\YiFHcqA5w.README.txt']. NOTE: circumstantial \u2014 no direct encryption API call observed, consistent with malware using custom (non-API) encryption to evade detection.",
+    "confidence": "medium \u2014 file-artifact pattern only, not a directly observed encryption call"
+  },
+  {
+    "technique_id": "T1112",
+    "technique_name": "Modify Registry",
+    "evidence_ids": [
+      "EVT-0729",
+      "EVT-0730",
+      "EVT-0731",
+      "EVT-0732"
+    ],
+    "justification": "Registry key(s) written outside known autorun locations (4 write(s))."
+  }
+]
